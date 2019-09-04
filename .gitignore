@@ -1,6 +1,8 @@
-
 # Created by https://www.gitignore.io/api/ruby,macos,rubymine,rubymine+all,rubymine+iml
 # Edit at https://www.gitignore.io/?templates=ruby,macos,rubymine,rubymine+all,rubymine+iml
+
+# Project specific
+out.html
 
 ### macOS ###
 # General
