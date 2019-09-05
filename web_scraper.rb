@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 require 'json'
+require 'yaml'
 
 # Adding some parsing functionality directly into String
 class String
@@ -13,19 +14,18 @@ class String
   end
 end
 
-# TODO should receive document structure from somewhere instead. Maybe a YAML file?
-def parse_params
-  raise ArgumentError, 'Needed params: base_url, search_string, search_results, address_css, price_css, expenses_css' unless ARGV.size == 6
-  return ARGV[0], ARGV[1], ARGV[2], ARGV[3], ARGV[4], ARGV[5]
+def read_structure
+  structure = YAML.load_file('config/structure.yml')
+  return structure['base_url'], structure['search_string'], structure['search_results'], 
+    structure['address_css'], structure['price_css'], structure['expenses_css']
 end
 
-base_url, search_string, search_results, address_css, price_css, expenses_css = parse_params
+base_url, search_string, search_results, address_css, price_css, expenses_css = read_structure
 url = base_url.append_slash_then_additional(search_string)
-puts "URL: #{url}"
 html = open(url)
 
 doc = Nokogiri::HTML(html)
-doc.css(".#{search_results}").each do |item|				# TODO extract CSS to some config file
+doc.css(".#{search_results}").each do |item|
   # TODO parse everything here. Bear in mind pagination!
   puts '<!-- Starting item -->'
   puts item
