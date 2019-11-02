@@ -1,15 +1,20 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    json (2.2.0)
     json (2.2.0-java)
-    nokogiri (1.10.3-java)
+    mini_portile2 (2.4.0)
+    nokogiri (1.10.4)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.4-java)
 
 PLATFORMS
   java
+  ruby
 
 DEPENDENCIES
   json (~> 2.2.0)
-  nokogiri (~> 1.10.3)
+  nokogiri (~> 1.10.4)
 
 BUNDLED WITH
    2.0.2
