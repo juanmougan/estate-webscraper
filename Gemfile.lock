@@ -3,10 +3,14 @@ GEM
   specs:
     json (2.3.0)
     json (2.3.0-java)
-    mini_portile2 (2.4.0)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
-    nokogiri (1.10.10-java)
+    mini_portile2 (2.5.1)
+    nokogiri (1.11.4)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.4-java)
+      racc (~> 1.4)
+    racc (1.5.2)
+    racc (1.5.2-java)
 
 PLATFORMS
   java
@@ -14,7 +18,7 @@ PLATFORMS
 
 DEPENDENCIES
   json (~> 2.3.0)
-  nokogiri (~> 1.10.10)
+  nokogiri (~> 1.11.4)
 
 BUNDLED WITH
    2.0.2
